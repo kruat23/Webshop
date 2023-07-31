@@ -1,0 +1,26 @@
+<div class="content" role="main">
+  
+    <div class="card highlight-card card-small">
+      <span>Termékek</span>
+    </div>
+
+    <button (click)="goToStart()">Főoldal</button>
+    <a [routerLink]="['/login']">Kijelentkezés</a>
+    
+    <div class="container">
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>          
+          <th *ngIf="products">Termék neve</th>
+          <th *ngIf="products">Ár</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">  
+          <td><span>{{product.name}}</span></td>
+          <td><span>{{product.cost}}</span></td>
+          <button (click)="addTransaction()">Vásárlás</button>
+        </tr>
+        </tbody>
+      </table>
+    </div>
